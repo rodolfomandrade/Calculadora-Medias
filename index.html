@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Calculadora de Médias Escolares</title>
+        <link rel="stylesheet" href="estilo/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Calculadora de Médias</h1>
+        </header>
+        <main>
+            <table id="tabela">
+                <thead>
+                    <tr>
+                        <th>Matérias</th>
+                        <th>1º Bimestre</th>
+                        <th>2º Bimestre</th>
+                        <th>3º Bimestre</th>
+                        <th>4º Bimestre</th>
+                        <th>Média Final</th>
+                    </tr>
+                </thead>
+            
+                <tbody id="tabela-notas">
+            
+                </tbody>
+            </table>
+            <ul id="lista-erros">
+
+            </ul>
+                <form id="formulario-notas">
+                    <select id="selectMateria">
+                        <option value="Física">Física</option>
+                        <option value="Matemática">Matemática</option>
+                        <option value="Química">Química</option>
+                        <option value="Português">Português</option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Biologia">Biologia</option>
+                        <option value="Geografia">Geografia</option>
+                        <option value="Filosofia">Filosofia</option>
+                        <option value="Sociologia">Sociologia</option>
+                        <option value="História">História</option>
+                    </select>
+                    <input id="nota1" type="number" placeholder="1ª Nota">
+                    <input id="nota2" type="number" placeholder="2ª Nota">
+                    <input id="nota3" type="number" placeholder="3ª Nota">
+                    <input id="nota4" type="number" placeholder="4ª Nota">
+                    <button id="botao-enviar">Enviar</button>
+                </form>
+        </main>
+        <script src="script/validacao.js"></script>    
+        <script src="script/principal.js"></script>
+        <script src="script/calcula-media.js"></script>
+    </body>
+</html>

@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #5275F7;
+}
+
+header{
+    background-color: #4E9AED;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+main{
+    max-width: 800px;
+    margin: auto;
+}
+
+#tabela{
+    background-color: #4e9beda8;
+    margin: 20px 0px;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#tabela th, #tabela td{
+    text-align: center;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#tabela td{
+    color: darkblue;
+    font-weight: bold;
+}
+
+#formulario-notas{
+    padding: 20px;
+    background-color: #AD4EED;
+}
+
+#formulario-notas input, #formulario-notas select, #formulario-notas button{
+    width: 15%;
+    padding: 5px;
+}
+
+#lista-erros li{
+    color: darkred;
+    list-style-type: none;
+}
