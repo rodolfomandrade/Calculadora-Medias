@@ -18,6 +18,10 @@ main{
     margin: auto;
 }
 
+#container{
+    overflow-x: auto;
+}
+
 #tabela{
     background-color: #4e9beda8;
     margin: 20px 0px;
