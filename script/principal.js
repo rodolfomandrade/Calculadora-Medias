@@ -4,13 +4,13 @@ var botaoAdicionar = document.querySelector("#botao-enviar");
 // Estamos fazendo o DOM escutar o evento de click no botão no HTML e executar uma ação
 botaoAdicionar.addEventListener("click", function(event){
     event.preventDefault();// Previne o comportamento de Reload na página
-    
     // Obter os dados do formulário do HTML
     var form = document.querySelector("#formulario-notas");
     // Obter as notas do form que acabamos de pegar do HTML
+    console.log(form)
     var notasMateria = obterNotas(form);
-    console.log(notasMateria);
     var erro = notaExiste(notasMateria);
+
     if(erro.length > 0){
         exibeErros(erro);
         return;
@@ -22,10 +22,11 @@ botaoAdicionar.addEventListener("click", function(event){
     }
     // Adicionando as notas já editadas na tabela do HTML
     adicionarNotasTabela(notasMateria);
-
+    tiraMateria(opcao);
     form.reset();
     var mensagemErro = document.querySelector("#lista-erros");
     mensagemErro.innerHTML = ""
+    
 })
 
 // Iremos extrair as notas do formulário de forma organizada em forma de Objeto

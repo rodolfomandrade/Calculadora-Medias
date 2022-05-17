@@ -54,3 +54,7 @@ main{
     color: darkred;
     list-style-type: none;
 }
+
+.preenchido{
+    display: none;
+}
