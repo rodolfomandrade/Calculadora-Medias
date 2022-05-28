@@ -1,19 +1,19 @@
 function validaNota(notasMateria){
     var erros = [];
 
-    if(notasMateria.primeira <= 0 || notasMateria.primeira > 10){
+    if(notasMateria.primeira < 0 || notasMateria.primeira > 10){
         erros.push("A Primeira nota é inválida")
     }
 
-    if(notasMateria.segunda <= 0 || notasMateria.segunda > 10){
+    if(notasMateria.segunda < 0 || notasMateria.segunda > 10){
         erros.push("A Segunda nota é inválida")
     }
 
-    if(notasMateria.terceira <= 0 || notasMateria.terceira > 10){
+    if(notasMateria.terceira < 0 || notasMateria.terceira > 10){
         erros.push("A Terceira nota é inválida")
     }
 
-    if(notasMateria.quarta <= 0 || notasMateria.quarta > 10){
+    if(notasMateria.quarta < 0 || notasMateria.quarta > 10){
         erros.push("A Quarta nota é inválida")
     }
 
