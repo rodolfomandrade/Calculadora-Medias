@@ -58,3 +58,11 @@ main{
 .preenchido{
     display: none;
 }
+
+.reprovado{
+    background-color: lightcoral;
+}
+
+.aprovado{
+    background-color: lightgreen;
+}

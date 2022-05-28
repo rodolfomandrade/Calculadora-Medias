@@ -7,9 +7,9 @@ botaoAdicionar.addEventListener("click", function(event){
     // Obter os dados do formulário do HTML
     var form = document.querySelector("#formulario-notas");
     // Obter as notas do form que acabamos de pegar do HTML
-    console.log(form)
     var notasMateria = obterNotas(form);
     var erro = notaExiste(notasMateria);
+    console.log(notasMateria.media)
 
     if(erro.length > 0){
         exibeErros(erro);
@@ -21,11 +21,16 @@ botaoAdicionar.addEventListener("click", function(event){
         return;
     }
     // Adicionando as notas já editadas na tabela do HTML
-    adicionarNotasTabela(notasMateria);
+    adicionarNotasTabela(notasMateria, notasMateria.media);
     tiraMateria(opcao);
     form.reset();
     var mensagemErro = document.querySelector("#lista-erros");
     mensagemErro.innerHTML = ""
+    
+    // Aqui ele confere se ainda existem matérias a serem adicionadas, se não tiver ele exclui o form
+    if(selectMateria.length == 0){
+        excluiFormulario(form);
+    }
     
 })
 
@@ -44,16 +49,21 @@ function obterNotas(formulario){
 }
 
 // Iremos adicionar as notas na tabela de forma automática ao clicar no botão
-function adicionarNotasTabela(notasMateria){
-    var notaTr = montaTr(notasMateria);
+function adicionarNotasTabela(notasMateria, requisito){
+    var notaTr = montaTr(notasMateria, requisito);
     var tabela = document.querySelector("#tabela-notas");
     tabela.appendChild(notaTr);
 }
 
 // Iremos montar a linha tr na tabela com todos os dados necessários(notas)
-function montaTr(notasMateria){
+function montaTr(notasMateria, requisito){
     var notaTr = document.createElement("tr");
     notaTr.classList.add("materia");
+    if(requisito <= 5){
+        notaTr.classList.add("reprovado");
+    }else{
+        notaTr.classList.add("aprovado");
+    }
 
     notaTr.appendChild(montaTh(notasMateria.materia, "nome-materia"))
     notaTr.appendChild(montaTd(notasMateria.primeira, "notaB1"));
